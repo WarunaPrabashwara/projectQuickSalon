@@ -1,0 +1,6 @@
+
+INSERT INTO j4f9qe_complaint ( customerID, date, time, details )
+VALUES ( 1 ,'2020-12-28','01:48:31' ,'took longer time than expeced'  );
+
+INSERT INTO j4f9qe_leave ( leaverID, isApproved, fromDate, fromTime, toDate, toTime, leaveType )
+VALUES ( 35 , 'n' ,'2019-12-28' , '01:48:31',  '2019-12-28' ,'01:48:31' ,'sick of illness'  );

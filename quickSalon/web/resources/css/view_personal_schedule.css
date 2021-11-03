@@ -1,0 +1,11 @@
+.subDiv{
+    display: -ms-flexbox;
+    flex-direction: row;
+}
+.subDiv >div{
+    text-align: center;
+}
+
+ .date-div{
+    text-align: center;
+ }  

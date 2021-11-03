@@ -1,0 +1,11 @@
+out/
+.metals/
+.vscode/
+quickSalon.iml
+.idea/
+.metadata/
+lib/
+quicksalon.iml
+target/
+.settings/
+.project

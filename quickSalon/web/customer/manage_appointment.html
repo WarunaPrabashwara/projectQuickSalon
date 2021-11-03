@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Appointments</title>
+
+    <link rel="stylesheet" href="../resources/css/sideNavbar.css">
+    <link rel="stylesheet" href="../resources/css/mainDiv.css">
+    <link rel="stylesheet" href="../resources/css/34.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../resources/css/normal.css">
+    
+    <link rel="stylesheet" href="../resources/css/manage_appointment.css" />
+    <link rel="stylesheet" href="../resources/css/frameWork/style.css" />
+    <script
+      src="https://kit.fontawesome.com/0f3db243e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer  src='../resources/javascript/main.js'></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="medium-space">
+      <div class="heading">
+        Manage Appointments
+      </div>
+
+      <div class="work-space">
+        <div class="table-div34">
+          <table class="table34">
+            <colspan>
+              <col class="medium-column">
+              <col class="medium-column">
+              <col class="medium-column">
+              <col class="medium-column center">
+              <col class="medium-column center">
+            </colspan>
+            <th>Date</th>
+            <th>Start</th>
+            <th>Duration</th>
+            <th>View</th>
+            <th>Reschedule</th>
+            <tr>
+              <td>2020-5-6</td>
+              <td>10.00 a.m</td>
+              <td>20mins</td>
+              <td>
+                <button class ="btn btn-small">
+                  <i class="fas fa-star-of-life"></i>
+                </button>
+              </td>
+              <td>
+                <a href="reshedule.html">
+                  <button class ="btn btn-small">
+                    <i class="fas fa-star-of-life"></i>
+                  </button>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="innerDiv">
+          <div type="submit" id="cancel" class="btn btn-red">
+              Back
+          </div>
+        </div><!-- end of innerDiv -->
+      </div><!-- end of work-space -->
+    </div><!-- end of medium-space -->
+  </div><!-- end of container -->
+</div>
+<script src="../resources/javascript/side_navbar.js"></script>
+<script src="../resources/javascript/manage_appointment.js"></script>
+</body>

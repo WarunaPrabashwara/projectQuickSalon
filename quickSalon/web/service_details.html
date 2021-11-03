@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="resources/css/34.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/sideNavbar.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/mainDiv.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/service_details.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./resources/css/frameWork/style.css">
+
+    <title>Service Details</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="medium-space">
+        <div class="heading">
+          Service Details
+        </div>
+        <div class="work-space">
+          <div class="select-service-div">
+            <select name="services" id="services">
+              <option value="">Select Service</option>
+            </select>
+          </div>
+
+          <div class="service-details">
+            <table id="serviceData">
+              <tr>
+                <th width="140px">Service ID</th>
+                <td id="serviceID"></td>
+              </tr>
+
+              <tr>
+                <th>Service Name</th>
+                <td id="serviceName"></td>
+              </tr>
+              <tr>
+                <th>Price</th>
+                <td id="price"></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td id="service-status"></td>
+              </tr>
+              <tr>
+                <th>Time Taken</th>
+                <td id="timeTaken"></td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td id="desc"></td>
+              </tr>
+
+            </table>
+          </div>
+          <!-- end of service-details -->
+
+          <button onclick="window.location.href='index.html'" class="btn btn-red">Back</button>
+        </div>
+        <!-- end of work-space -->
+      </div>
+      <!-- end of medium-space -->
+    </div>
+    <!-- end of container -->
+
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript" src="resources/javascript/purchases.js"></script>
+      <script type="text/javascript" src="resources/javascript/serviceDetails.js"></script>
+      <script type="text/javascript" src="resources/javascript/side_navbar.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,238 @@
+quick salon folder eka copy karala wena thanakaa ganna 
+eke 
+
+java install karala 
+dewaniyata thibba variable wala 
+JAVA_HOME 
+D:\jdk-14
+kiyala ekak damma eewagema 
+pah wala
+D:\jdk-14\bin
+damma
+
+
+java_home kiyana variable eka haduwe naham tomcat start wenne naha puthaa
+
+tomcat eke statup eka run wenne nattham api kocchara dagaluwath wadak naha intelij aulak kiyala hithaala
+
+
+apache tomcat10 download kala
+
+
+( meka kelawuna yatama tyenawa hari krame    folders walin ( not files ) out ekayi src ekayii hiyala anith ewa delete karanna
+iita pasese eka intelij walin open karala mulin project structure gihilla
+jre eka set karala
+thiyena module eka deete karalla aluth module ekkuth set karala
+artifact walata giilla tena eka ayin karala aluth ekak hadapn quickSalon:war exploded kiyana eke n wen application exploded thamayi nama
+( libraries wala rathu pata dekak thibba ee deka delete kala)
+iilatata home page awill 
+add cofiguration yanna
+new ekk depm
+tomcat server eke local ekak
+port eka 8081 depn 
+yata no artifacts configured warning eka issrah fix ek krpn
+api dipu artifact eka horala dipn
+ok wenwa ibnbemaoutput path eka hadala naha kiynwanam ape project eke athulema out folder ekak hadala ekata ser krpn project structure eke 
+project wala tyenwa output path eka
+
+Maven plugins can not be found in IntelliJ - Stack Overflow
+prashnayak enwanam
+
+jdk 8 kalin thibbbe 
+ekaa jdk 14 eke root path eka dunna ariyayida balanna
+
+
+e para ena out put ekanam kalin ta wada wenas 
+
+wenas unath error ekak enne so mama aaya aluthin same eka hadanna yanne
+
+eke project structure eke project wala jdk 14 payh elka dunna
+moduloes eka java newe maven gatte
+
+module name 
+untitled   ma thibba
+artifac ekak aluthin haduwa
+web application exploded
+name eka
+quickSalon:war exploded
+add configuration giyaa
+tomcat server
+local
+java version 14 damma
+
+url eka 
+http://localhost:8081/quickSalon_war_exploded/   karaaa
+
+port 8081
+deploymt kiyana dewani tab ekata udin gya
+eekata add deddi ibema quicksalon war exploded penwanawa so no problem
+eekaselec karala apply krl ok kala
+eeth ara error ekama wage enwa habayi ara maven eka download karanna baha kyna pprashne enne naha
+
+iilagaa edit confiuration eke 
+yaama tyenwa build kyla een ekak 
+eekta gihilla ape artifact eka teruwa 
+eeh hari naha
+
+plugin ekak dammamn
+http://localhost:8081/
+eke war exploded ayin kala
+
+mama nikamata project structure giuihilla new module ekak haduwa bu didnt dlete .e wagema eeka use karannth kiwe naha
+danata ethkpa hadapyu module dekak tyenwa
+
+iita passe ar pom eke tibba prashne nathi una 
+hari pudumayi
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+amathara danuma
+
+atthatama artiact eka yanu deployment ekata ganna eka
+eka hadenne out folder eke 
+community eke web apphadanna baha lu
+
+
+
+java version kipayak tyenwanm kelawenwa 
+ethkota uba project structure eke sdk wala deka thunak tyenwanameewa delete karamnn oni 
+mama nm 14 wtrayi thibbe
+iilagata project kiyna ekata gihilla balann oni kalin delet kara ekak nisa ethana sdk eke aulk gihilld kyl
+hari dan quick salon open karanna  meaven widihata
+project structure gihilla modules gihilla quicksalon click karanna
+uda -+ lakuna ebuwama list ekak enawa 
+( eekaata quickk salon clicl karala tyenna oni)
+eeke yatama web eka thorann
+dan ena window ekeyata dakunu patte create artifact obanna
+apply karanna 
+( ehema nokaloth uba artifact hadaddi web app exploded eke module ekakin hadanna kiyana dakunu patte ena arrow lakuna penwanne naha)
+dan artifact ekat gihilla balanna
+aluth update eke ibema ethkota artifact eka hadenawa 
+
+dan mul window ekata awilla 
+uda add configuration wala tomcat server eke local ekak thooranna
+iilagata yatama warning ekak penwanawa eeka fix krpn
+ethkota ara artifact eka methana penwanawa
+eke port 8081 krpn
+( than dekayi tyebnne )
+dan pom.xml eke line dekak rathu patin peenawada balpn 
+ooka hadagatthanam hari
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+asaluthinma gatta
+https://learntocodetogether.com/configure-tomcat-server-on-intellij-idea/
+balagena haduwa
+
+maven widihata open kala
+
+add configuration gya
+omcat server eke locaol teruwa
+yata no aartifact found eke fix button eka ebuwa
+web application exploded kiyla hadala  quickSalon_war_exploded/  kyl dunn nama
+
+module ekata nikan giya eewa okkoma ibe hadila
+ilagata apply krla aawa
+sa
+deployment ekata ara war exploded eka awilla
+url eka wenas knn on
+
+http://localhost:8081/quickSalon_war_exploded/
+ekth kala
+kalin apache tomcat wenas kala nisada danne nathi nisa aaya apache tom cat download kara eken eplace kala
+same error
+
+pom.xml eke right click karala maven gihilla download sources and documentation dipan
+
+
+
+No data sources are configured to run this SQL and provide advanced code assistance. Disable this inspection via problem menu (Alt+Enter).
+error eka awoth db eka configure karanna oni
+view giya 
+tool window giya 
+ita passe database giya
+new datasource ekak add karanna mysql kiyla
+download missing drivers karanna thibba
+test connection eke 
+usr name saha passwod dunna
+successs awa
+ita passe warniing 4 kthibba eka 3 k ubnana
+aaya eeka remove kalaa 
+xampp aul nisada manda wada kale naha database connection eka so mysql work bench damma balanna
+hari giye naha . so mn eclips wala open kala balann
+eke import maven project eka haraha import karanna oni
+tomcat 10 eke aula tyenne 
+mn hithanne 
+toma 9 dammanm hari
+10 ekata awe nathi error ekak 9 ekata enwa 
+ Artifact quickSalon:Web exploded: Error during artifact deployment. See server log for details.
+ekat hari giye naha so kalin thibba apache eka dvd ekaka thibila eka hoya gatha 
+barima thana ubuntu vm ekak dala eke karanna baluwe
+ubuntu eke 
+systemctl status tomcat
+wage ewagen meka conrol karanne . off karala tapan nattham intelij walin gaddi prashnayak wenwa
+ubuntu eke inernet wada karanne nathikota 
+sudo dhclient      gahanna hariyanawaoff karalaon karahama wada naha godak welawata
+ubuntu matchine eke java 13 saha tomcat 9 dammme balanna
+mvn -U idea:idea
+gahuwa barima thana 
+ethkota
+Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 3913 (apt)... 92s
+awothhttps://askubuntu.com/questions/1352416/see-terminal-text-waiting-for-cache-lock-error-how-to-fix-im-on-ubuntu-21
+meke tyena mulma solution eka karanna
+sudo killall -9 apt wage
+kalin artifact eka thibbe web exploded ekak 
+eeka delete karala war exloded ekak haduwa
+
+
+
+show databases;
+use quick_salon ;
+show tables ;
+select * from j4f9qe_leave ;
+select * from j4f9qe_complaint ;
+select * from j4f9qe_user ;
+
+INSERT INTO j4f9qe_leave (leaveID, leaverID, isApproved, fromDate, fromTime, toDate, toTime, leaveType )
+VALUES (1, 35 , 'n' ,'2017-12-28' , '01:48:31',  '2017-12-28' ,'01:48:31' ,'yea'  );
