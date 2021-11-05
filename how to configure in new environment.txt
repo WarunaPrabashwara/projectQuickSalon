@@ -236,3 +236,13 @@ select * from j4f9qe_user ;
 
 INSERT INTO j4f9qe_leave (leaveID, leaverID, isApproved, fromDate, fromTime, toDate, toTime, leaveType )
 VALUES (1, 35 , 'n' ,'2017-12-28' , '01:48:31',  '2017-12-28' ,'01:48:31' ,'yea'  );
+
+aluthin servlet hadanna saha kalin thibba servlet wenas kalata kalin thibba eewama ena seen ekak thibba
+
+e nisa mama eclips walata maru una barima thana 
+
+https://mail.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-eclipse-maven-and-apache-tomcat
+
+https://www.codejava.net/servers/tomcat/how-to-add-tomcat-server-in-eclipse-ide
+
+uda link deke eclips walin wade karanna tyenwa lassanata
