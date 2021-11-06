@@ -246,3 +246,13 @@ https://mail.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-
 https://www.codejava.net/servers/tomcat/how-to-add-tomcat-server-in-eclipse-ide
 
 uda link deke eclips walin wade karanna tyenwa lassanata
+
+
+
+hari intelij walin servlet hadanna nam java ee application ekak hadanna oni
+nattham baha 
+
+servlet denne naha package eke right click karahama
+
+eclips walanm dynamic web project hadanna oni
+
