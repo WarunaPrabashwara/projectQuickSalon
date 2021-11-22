@@ -1,0 +1,41 @@
+eclips wala project eka right click karala buid project karanna oni 
+ehema nattham aluth update penwnne naha browser eke 
+
+eeth penwanne nattham server kiyana places deka deklete karala eka  aya project eka click karala 
+windows gihilla 
+agama eken aya server eka build karala ganin
+
+
+
+login eka wada naha so 
+
+owner ge home eka 
+
+http://localhost:8080/quickSalon/upperStaff/owner/ownerHome.html
+
+manager ge home eka
+
+http://localhost:8080/quickSalon/upperStaff/manager/manager_home.html
+
+customer ge home eka
+
+http://localhost:8080/quickSalon/customer/home.html
+
+
+page deka 
+
+http://localhost:8080/quickSalon/customer/review.html
+
+
+http://localhost:8080/quickSalon/upperStaff/generate_report.html
+
+
+
+
+
+
+
+
+
+
+ 
