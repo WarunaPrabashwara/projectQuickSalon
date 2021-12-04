@@ -1,0 +1,32 @@
+*{
+  text-decoration: none;
+  font-family: 'Roboto';
+  color: red;
+}
+
+body{
+  background: url('../images/noaccess.jpg') no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.restricted{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.restricted h3{
+  color: black;
+  margin-top: 150px;
+}
+
+.restricted button{
+  /* align-self: end; */
+  border: none;
+  font-size: 15px;
+  background: none;
+  margin-top: auto;
+  margin-bottom: 200px;
+}

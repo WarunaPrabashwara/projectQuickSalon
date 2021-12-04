@@ -1,0 +1,14 @@
+.table-div34 {
+  max-width: 800px;
+  min-width: 500px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#cancel:hover > a {
+  color: white;
+}
+

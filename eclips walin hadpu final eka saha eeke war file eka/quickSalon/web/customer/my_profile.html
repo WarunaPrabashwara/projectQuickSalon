@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="../resources/css/sideNavbar.css" />
+    <link rel="stylesheet" href="../resources/css/mainDiv.css" />
+    <link rel="stylesheet" href="../resources/css/34.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../resources/css/normal.css" />
+    <link rel="stylesheet" href="../resources/css/frameWork/style.css" />
+    <script src="../resources/javascript/side_navbar.js"></script>
+        
+    <link rel="stylesheet" href="../resources/css/customer_profile.css" />
+    <script src="../resources/javascript/main.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="large-space">
+        <div class="heading">My profile</div>
+        <div class="work-space">
+          <div class="form34">
+            <div align="center"  id="uploadpara" >
+            <label   >upload a profile picture</label>
+            </div>
+            <br>
+            <div  align="center"   id="profilepicure" >
+              <img  class="profile" src="http://localhost:8080/quickSalon/Fileuploadsevlet?customerID=41" >
+            </div>
+            <div  align="center"  >
+            <button onclick="uploadfile()"    id="uploadimageopen" class="btn btn-green" style="width: 180px;">change profile image</button>
+            <a   id="downloadimage" href="http://localhost:8080/quickSalon/imagedownloader?customerID=41"  class="btn btn-green" style="width: 180px;">Download image</a>
+            <button id="deleteimage"  onclick="deletefile()" class="btn btn-red"  style="width: 180px;" > Delete photo </button>
+          </div>
+
+            <div align="center"  id="upoadpic" >
+             <input id = "ajaxfile" type="file"  style="width: 112px" />
+             <button onclick="uploadfile()"  class="btn btn-green" >Upload</button>
+            </div>
+            
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" />
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" />
+
+            <label for="uname">User Name</label>
+            <input type="text" id="uname" name="uname" />
+
+            <label for="cnum">Contact Number</label>
+            <input type="text" id="cnum" name="cnum" />
+
+           
+
+            <label for="email">Email</label>
+            <input   type="text"  id="email" name="email"     />
+
+          </div>
+          <!-- end of form -->
+
+          <br /><br />
+          <div class="innerDiv">
+            <div id="cancel" class="btn btn-red">
+              <a href="home.html"> Back </a>
+            </div>
+            <button id="save" class="btn btn-green">Apply changes</button>
+          </div>
+          <!-- end of innerDiv -->
+        </div>
+        <!-- end of work-space -->
+      </div>
+      <!-- end of large-space -->
+    </div>
+    <!-- end of main -->
+
+  </body>
+</html>
+<script>
+
+var customerID = 41 ;
+
+  async function uploadfile() {
+    let formData = new FormData();
+    var filename =  customerID.toString() ;
+    console.log(ajaxfile.files[0].name.split(".")[1])
+ //   var lastfilename = filename + "." + ajaxfile.files[0].name.split(".")[1] ;
+    var lastfilename = filename + "." + "jpeg" ;
+    formData.append("file" , ajaxfile.files[0] , lastfilename );
+    await fetch('/quickSalon/Fileuploadsevlet' , {
+      method : "POST" ,
+      body : formData
+    });
+   // alert('file upload succesful');
+   window.location.reload();
+  }
+
+  async function deletefile() {
+    var deletedata = {
+      customerID: customerID 
+    };
+
+    $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/quickSalon/imagedownloader",
+            data: deletedata,
+            success: function (response) {
+              console.log(response);
+              window.location.reload();
+            
+            },
+          });
+
+  }
+
+  
+const emailCheck = () => {
+  let email = $("#email").val();
+  if (!email.includes("@") && email.includes(" ")) {
+    alert("missing @ symbol and there is a space in email field!");
+    return false;
+  } else if (!email.includes("@")) {
+    alert("missing @ symbol in the email field!");
+  } else if (email.includes(" ")) {
+    alert("There is a space in the email field");
+  } else {
+    return true;
+  }
+};
+
+const numLen = () => {
+  let len = $("#cnum").val().length;
+  if (len == 10) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const stringCheck = () => {
+  //string ekak apuwahama methana return wenne false;
+
+  let contactNumber = $("#cnum").val();
+  let numArr = contactNumber.split("");
+
+  for (var i = 0; i < numArr.length; i++) {
+    if (!parseInt(numArr[i]) && numArr[i] != "0") {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const numberCheck = () => {
+  if (!stringCheck() && !numLen()) {
+    alert(
+      "There are/is string/s in the contact number field ! please enter 10 digit number to the contact number field!"
+    );
+  } else if (!stringCheck()) {
+    alert("There are/is string/s in the contact number field !");
+  } else if (!numLen()) {
+    alert("Please enter 10 digit number to the contact number field!");
+  } else {
+    return true;
+  }
+};
+
+$("document").ready(function () {
+  var k = 0 ;
+  var m = 0 ;
+  $("#uploadpara").addClass("hidden");
+  $("#upoadpic").addClass("hidden");
+  $("#uploadimageopen").addClass("hidden");
+  $("#downloadimage").addClass("hidden");
+  $("#deleteimage").addClass("hidden");
+
+  
+  console.log("this is m");
+  $.get("http://localhost:8080/quickSalon/viewproiledeaails",{ customerID:customerID},
+    function(data, status){
+      console.log("this is my profile");
+      console.log(data);
+
+      console.log(data[0]);
+      
+      
+      $("#fname").val(data[0].firstName)  ;		
+      //append use karnn baha i tried once  val () eka athue liyannath pluwan i guess
+      $("#lname").val(data[0].lastName)   ;
+      $("#uname").val(data[0].userName)  ;
+      $("#cnum").val(data[0].telephone)  ;    
+      $("#email").val(data[0].email)  ;
+      
+      
+      
+       
+    }
+  );  
+
+  
+
+  $.get("http://localhost:8080/quickSalon/Fileuploadsevlet",{ customerID:customerID},
+    function(data, status){
+      console.log("this is me");
+      console.log(data);
+
+      if(data == 'No profile picture available'){
+        $("#profilepicure").addClass("hidden");
+        $("#upoadpic").removeClass("hidden");
+        $("#uploadpara").removeClass("hidden");
+        $("#uploadimageopen").addClass("hidden");
+        
+        
+      } else{
+        $("#profilepicure").removeClass("hidden");
+        $("#uploadpara").addClass("hidden");
+        $("#uploadimageopen").removeClass("hidden");  
+        $("#downloadimage").removeClass("hidden");    
+        $("#deleteimage").removeClass("hidden");    
+        
+      } 
+
+    }
+  );  
+
+
+  
+  $("#save").click(function () {
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var uname = $("#uname").val();
+    var cnum = $("#cnum").val();
+    var email = $("#email").val();
+    
+
+    var details = {
+      customerID: customerID ,
+      fname: fname,
+      lname: lname,
+      uname: uname,
+      cnum: cnum,
+      email: email
+    };
+
+    if (
+      fname == "" &&
+      lname == "" &&
+      uname == "" &&
+      cnum == "" &&
+      email == "" 
+    ) {
+      alert("please fill all the fields!");
+    } else {
+      if (emailCheck() && numberCheck()) {
+        if (confirm("Do you want to update profile?")) {
+          $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/quickSalon/updateproiledeaails",
+            data: details,
+            success: function (response) {
+              console.log(response);
+              if (response == 1) {
+                alert("Details Updated!");
+                location.reload();
+              } else {
+                alert("Unsuccess! please try again!");
+                location.reload();
+              }
+            },
+          });
+        }
+      }
+    }
+  });
+
+
+  
+  $("#uploadimageopen").click(function () {
+    $("#upoadpic").removeClass("hidden");
+  });
+
+
+});
+
+  
+</script>
+
+
+<style>
+
+  
+  .hidden{
+        display: none;
+    }
+  .profile {
+
+    border-radius:50%;
+    width:100px;
+    height:100px;
+
+}
+
+</style>

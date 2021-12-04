@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/main.css'>
+    <link rel="stylesheet" href="../resources/css/normal.css">
+    <link rel="stylesheet" href="../resources/css/leave.css" />
+    <link rel="stylesheet" href="../resources/css/sideNavbar.css">
+    <link rel="stylesheet" href="../resources/css/mainDiv.css">
+    <link rel="stylesheet" href="../resources/css/34.css">
+    <link rel="stylesheet" href="../resources/css/frameWork/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src='../resources/javascript/main2.js'></script>
+</head>
+
+<body onresize="whenResizing()">
+
+<div class="alll">
+    <!-- <div cl></div> -->
+    <div class="mainDiv container">
+        <div class="large-space">
+            <div class="heading topBar">Report generator</div>
+
+            <div class="work-space">
+                <!-- <div class="inner-div"> -->
+                <div class="form-container">
+                    <form id="subform" class="hider"  action="report" method="POST" >
+                    <div class="input-text-wrap">
+                        <label >Type</label>
+                        <select name="services" id="services" >
+                            <option value="complaint">complaint</option>
+                            <option value="leave">leave</option>
+                        </select>
+                    </div>
+
+                    <div class="input-text-wrap">
+                        <label for="from">From</label>
+                        <input type="date" id="from" name="from"><br>
+                        <label for="to">To</label>
+                        <input type="date" id="to" name="to">
+                    </div>
+
+
+                    <div>
+                        <input type ="submit" class = "btn" value = "Generate" ID="SUBMIT" >
+                    </div>
+                    </form>
+                    <div class="tableDiv34 print-container">
+                        <table name="complaint" id="myTable" class="table34">
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Customer ID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Details</th>
+                            </tr>
+                            <tbody id="tbl"></tbody>
+                        </table>
+                        <table name="leave" id="myTable2" class="table34">
+                            <tr>
+                                <th>Leave ID</th>
+                                <th>Leaver ID</th>
+                                <th>Is Approved</th>
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                <th>From Time</th>
+                                <th>To Time</th>
+                                <th>Leave Type</th>
+                            </tr>
+                            <tbody id="tbl2"></tbody>
+                        </table>
+                    </div>
+
+                    <style>
+                        @media print {
+                            body * {
+                                visibility: hidden;
+                                background-image: none;
+                                background: transparent;
+                                background-color: white;
+
+                            }
+
+                            .hider {
+                                display: none;
+                            }
+                            .print-container, .print-container * {
+                                visibility: visible;
+                                background-color: white;
+                            }
+                            .print-container {
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+
+
+                            }
+                        }
+                    </style>
+                    <div class="innerDiv">
+                        <BUTTON  class = "btn34 " onclick="window.print();" ID="print" >Print report</BUTTON>
+                    </div>
+                </div>
+                <div class="innerDiv">
+                    <button class="btn btn-red" onclick="history.back()">Back</button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+    $("document").ready(function () {
+        var k = 0 ;
+        var m = 0 ;
+       $("#myTable").addClass("hidden");
+      $("#myTable2").addClass("hidden");
+        $("#print").addClass("hidden");
+        console.log("st ");
+        $("#SUBMIT").click(function(event){
+            event.preventDefault();
+            var formdata = $("#subform").serialize();
+            var e = document.getElementById("services");
+            var services = e.value;
+            console.log("stt ");
+
+
+            $.post(
+                "http://localhost:8080/quickSalon/upperStaff/report" ,
+                formdata ,
+                function (data , satus){
+                    console.log("s ");
+
+                    if(services == 'complaint'){
+                        $("#myTable").removeClass("hidden");
+
+                        $("#myTable2").addClass("hidden");
+
+                        if ( k == 0){
+                            k = 1;
+                            data.map(function (x) {
+                                $("#tbl").append(
+                                    "<tr>" +
+                                    "<td>" +
+                                    x.complaintID +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.customerID +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.date +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.time +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.details +
+                                    "</td>" +
+                                    "</tr>"
+                                );
+                            });
+                            $("#print").removeClass("hidden");
+                        }
+                        /* console.log("status " + status);*/
+                    }
+                    else if(services == 'leave'){
+                        $("#myTable").addClass("hidden");
+
+                        $("#myTable2").removeClass("hidden");
+
+                        if ( m == 0){
+                            m=1;
+                            data.map(function (x) {
+                                $("#tbl2").append(
+                                    "<tr>" +
+                                    "<td>" +
+                                    x.leaveID +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.leaverID +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.isApproved +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.fromDate +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.toDate +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.fromTime +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.toTime +
+                                    "</td>" +
+                                    "<td>" +
+                                    x.leaveType +
+                                    "</td>" +
+                                    "</tr>"
+                                );
+                            });
+                            $("#print").removeClass("hidden");
+                        }
+                        console.log("Data " + data[0].leaveType);
+                        /*  console.log("status " + status);*/
+                    }
+                }
+
+            )
+
+        })
+    });
+</script>
+
+<style>
+    .hidden{
+        display: none;
+    }
+</style>
+</body>
+
+
+</html>
+
+

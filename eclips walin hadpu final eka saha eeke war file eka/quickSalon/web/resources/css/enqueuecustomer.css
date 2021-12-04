@@ -1,0 +1,276 @@
+
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.subDiv{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+/* Pop up */
+.close-btn{
+    position: relative;
+    left: 95%;
+    color:red ;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+
+}
+
+.t-modal-close{
+    position: absolute;
+    left: 90%;
+    top: 15px;
+    padding: 6px;
+    color: red;
+}
+
+.t-modal-close:hover{
+    background-color: rgb(241, 99, 99);
+
+}
+
+.check-box{
+    width: 15px;
+}
+
+
+/* Time pop up table */
+
+.time-modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.time-popup{
+
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.modal-header{
+    background-color: aqua;
+    position: relative;
+    top: 0;
+    text-align: center;
+    font-size: medium;
+}
+
+
+.modal-content{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: white;
+    height: 500px;
+    font-size: 20px;
+    font-family: serif;
+    border-radius: 15px;
+}
+
+.modal-btn{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+}
+
+
+.row-1{
+    display: inline-flex;
+    /*flex-direction: column;*/
+    /* text-align: center; */
+}
+
+.row-1 > div{
+    margin: 10px;
+}
+
+.row-2{
+    margin: 0;
+    padding: 0;
+    display: -ms-flexbox;
+    flex-direction: row;
+    height: auto;
+}
+
+.name-txt{
+    height: 50px !important;
+}
+
+.select-opt{
+    height: 50px !important;
+}
+
+
+/* .calendar{
+    width: fit-content;
+} */
+
+.calDiv{
+    width: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+
+.add-btn{
+    flex: 2;
+    margin-left: 150px;
+    margin: 20px;
+    margin-left: 40%;
+
+}
+.cancel-btn{
+    display: inline;
+    margin-left: 10%;
+
+}
+.confirm-btn{
+    display: inline;
+    margin-left: 60%;
+}
+
+
+.subDiv > div{
+    margin: 0px 0px 10px 10px;
+}
+
+
+
+@media screen and (max-width:800px)
+{
+    .row-1
+    {
+        justify-items: center;
+    }
+
+
+    .row-2{
+        flex-direction: column;
+    }
+}
+
+
+/* For calendar */
+
+.work-space {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 80%;
+  }
+  
+ 
+  .table-div34 {
+    max-width: 600px;
+    margin-top: 200px !important;
+  }
+  
+  .innerDiv {
+    max-width: 600px;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: all 500ms;
+    color: black;
+  }
+  
+  #cancel:hover > a {
+    color: white;
+  }
+  
+  .center {
+    text-align: center;
+    justify-content: center;
+  }
+
+  #servicedropdownlist{
+      margin-top: 8px;
+      width: 250px;
+  }
+  #spdropdownlist{
+    margin-top: 10px;
+    width: 250px;
+  }
+
+  button{
+      width: 100px !important;
+  }
+
+  /* +++++++++++++++++ */
+  .calendar-time{
+     display: flexbox;
+     /* display: none; */
+    
+  }
+
+  .content-div{
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .time-div{
+    /* display: none; */
+    /* display: inline; */
+    /* border: 2px solid red; */
+    width: 100%;
+    height: auto;
+  }
+
+  h3{
+      text-align: center;
+  }
+
+  .btn-bar{
+      margin-left: 80px;
+      width: 100%;
+  }
+
+  .time-slots-table{
+      max-height: 400px;
+      overflow-y: scroll;
+  }
+
+  .calendar {
+    width: 500px;
+    border: 1px solid var(--main-color-dark);
+    height: 400px;
+    padding: 10px;
+  } 
+
+  #select-time-btn {
+    position: relative;  
+    float: right;
+    margin-right: 160px;
+  }
+   
+  input {
+    height: 40px;
+  }
+
+  #apt-time-div {
+    margin-left: 100px;
+  }
